@@ -10,7 +10,7 @@ public class NewOrderMain {
 	public static void main(String[] args) throws InterruptedException, ExecutionException, IOException {
 		try (var orderDispatcher = new KafkaDispatcher<Order>()) {
 			try (var emailDispatcher = new KafkaDispatcher<Email>()) {
-				for (int i = 0; i < 100; i++) {
+				for (int i = 0; i < 10000; i++) {
 					var userId = UUID.randomUUID().toString();
 					var orderId = UUID.randomUUID().toString();
 					var amount = new BigDecimal(Math.random() * 5000 + 1);
