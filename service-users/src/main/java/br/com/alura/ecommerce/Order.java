@@ -6,11 +6,11 @@ public class Order {
 	
 	private final String orderId, email;
 	private final BigDecimal amount;
-	public Order(String email, String orderId, BigDecimal amount) {
+	public Order(String orderId, BigDecimal amount, String email) {
 		super();
-		this.email = email;
 		this.orderId = orderId;
 		this.amount = amount;
+		this.email = email;
 	}
 	
 	public BigDecimal getAmount() {
@@ -20,10 +20,9 @@ public class Order {
 	public String getEmail() {
 		return email;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Order [orderId=" + orderId + ", email=" + email + ", amount=" + amount + "]";
+		return "Order [orderId=" + orderId + ", amount=" + amount + ", email=" + email + "]";
 	}
-
 }
